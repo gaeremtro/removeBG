@@ -1,0 +1,15 @@
+services:
+  remove-bg:
+    build: ./remove-bg-service
+    container_name: removebg-service
+    ports:
+      - "8000:8000"
+    volumes:
+      - type: bind
+        source: ./remove-bg-service
+        target: /app
+      # Persist u2net models so they aren't redownloaded every restart
+      - u2net_data:/root/.u2net
+
+volumes:
+  u2net_data:
