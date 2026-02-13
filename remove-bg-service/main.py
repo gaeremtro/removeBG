@@ -25,14 +25,14 @@ async def remove_background(file: UploadFile = File(...)):
         image_data = await file.read()
         
         # Process with rembg using standard u2net and alpha matting
-        # Final config: u2net + alpha matting with erosion to clean artifacts
+        # Config: Soft/Balanced (threshold=240, erode=5) to preserve details without being too aggressive
         output_data = remove(
             image_data,
             session=session,
             alpha_matting=True,
             alpha_matting_foreground_threshold=240,
-            alpha_matting_background_threshold=20,
-            alpha_matting_erode_size=15
+            alpha_matting_background_threshold=10,
+            alpha_matting_erode_size=5
         )
         
         # Return as PNG
