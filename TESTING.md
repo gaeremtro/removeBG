@@ -8,8 +8,7 @@ docker-compose ps
 Debe decir `Up` en el estado del servicio `remove-bg`.
 
 ## 2. Preparar tu imagen
-Copia la foto que quieres probar (ej. `mi_foto.jpg`) en la carpeta del proyecto:
-`C:\Users\gabri\Documents\SOM\RemoveBG`
+Copia la foto que quieres probar (ej. `mi_foto.jpg`) en la carpeta del proyecto.
 
 ## 3. Ejecutar la prueba
 Abre una terminal en esa carpeta y ejecuta este comando (cambia `mi_foto.jpg` por el nombre de tu archivo):
